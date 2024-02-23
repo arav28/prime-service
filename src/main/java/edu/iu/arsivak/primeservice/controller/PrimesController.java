@@ -1,15 +1,21 @@
 package edu.iu.arsivak.primeservice.controller;
 
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import edu.iu.arsivak.primeservice.service.IprimesService;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
+@RequestMapping("/primes")
 public class PrimesController {
-    @GetMapping
-    public String greetings() {
-        return "Heloo PRime services!";
+
+    IprimesService iprimesService;
+
+    public PrimesController(IprimesService iprimesService) {
+        this.iprimesService = iprimesService;
+    }
+    @GetMapping("/{n}")
+    public boolean isPrime(@PathVariable int n) {
+        return iprimesService.isPrime(n);
     }
 }
