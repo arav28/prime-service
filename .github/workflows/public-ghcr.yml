@@ -28,4 +28,4 @@ jobs:
           docker push ghcr.io/arav28/prime-service:latest 
 
 
-#          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
+#          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

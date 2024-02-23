@@ -11,7 +11,7 @@ public class PrimesServices implements IprimesService{
         }
 
         for (long i=2L;i<n;i++) {
-            if(n%1==0) {
+            if(n%i==0) {
                 return false;
             }
         }
