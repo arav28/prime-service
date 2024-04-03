@@ -8,6 +8,7 @@ import jakarta.persistence.Column;
 @Entity
 public class Customer {
 
+    @Id
     private String username;
     private String password;
 
