@@ -31,3 +31,11 @@ services:
       - spring.datasource.username=postgres
       - spring.datasource.password=password
       - spring.datasource.restart=no
+
+  rabbit-mq:
+    image: rabbitmq:3.12.4-management
+    container_name: rabbit-mq
+    ports:
+      - "4006:5672"
+      - "4007:15672"
+    restart: always
